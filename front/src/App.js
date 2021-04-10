@@ -8,10 +8,10 @@ const Store = createContext(initialState)
 
 
 const Form = () => {
-  const formRef = useRef(null);
+  const formRef = useRef(null); //valor que se puede cambiar
   const { dispatch, state: { todo } } = useContext(Store);
   const item = todo.item;
-  const [state, setState] = useState(item);
+  const [state, setState] = useState(item); //tengo un valor inicial y lo puedo cambiar
 
   const onAdd = (event) => {
     event.preventDefault();
@@ -82,7 +82,7 @@ const List = () => {
   const { dispatch, state: { todo } } = useContext(Store);
   const currentList = todo.list;
 
-  useEffect(() => {
+  useEffect(() => { //se usa despues del renderizado
     fetch(HOST_API + "/todos")
       .then(response => response.json())
       .then((list) => {
