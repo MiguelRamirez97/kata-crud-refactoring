@@ -3,7 +3,7 @@ import React, { useContext, useReducer, useEffect, useRef, useState, createConte
 import { FormList } from './Form/FormList';
 import { FormItem } from './Form/FormItem';
 import List from './List/List';
-import { reducer } from './Reducer/Reducer';
+import {StoreProvider} from './Provider/StoreProvider';
 
 export const HOST_API = "http://localhost:8080/api";
 export const initialState = {
@@ -13,16 +13,6 @@ export const initialState = {
   }
 };
 export const Store = createContext(initialState) //Consumer, provider, store hace la funcion de ambos
-
-
-export const StoreProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  return <Store.Provider value={{ state, dispatch }}>
-    {children}
-  </Store.Provider>
-
-}
 
 function App() {
   return ( 
