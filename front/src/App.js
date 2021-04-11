@@ -3,11 +3,12 @@ import List from './List/List';
 import Form from './Form/Form';
 import { reducer } from './Reducer/Reducer';
 
-const HOST_API = "http://localhost:8080/api";
+export const HOST_API = "http://localhost:8080/api";
 const initialState = {
   todo: { list: [], item: {} }
 };
-const Store = createContext(initialState)
+export const Store = createContext(initialState) //Consumer, provider, store hace la funcion de ambos
+
 
 const StoreProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
