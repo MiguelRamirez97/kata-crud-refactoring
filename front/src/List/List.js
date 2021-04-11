@@ -1,6 +1,6 @@
 import React, { useContext, useReducer, useEffect, useRef, useState, createContext } from 'react';
 
-export const List = (Store) => {
+export const List = (Store,HOST_API) => {
     const { dispatch, state: { todo } } = useContext(Store);
     const currentList = todo.list;
   
@@ -70,3 +70,4 @@ export const List = (Store) => {
       </table>
     </div>
   }
+  export default List;

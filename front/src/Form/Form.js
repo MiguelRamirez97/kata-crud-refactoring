@@ -1,6 +1,6 @@
 import React, { useContext, useReducer, useEffect, useRef, useState, createContext } from 'react';
 
-const Form = () => {
+const Form = (Store,HOST_API) => {
     const formRef = useRef(null); //valor que se puede cambiar
     const { dispatch, state: { todo } } = useContext(Store);
     const item = todo.item;
