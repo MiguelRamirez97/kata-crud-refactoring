@@ -1,3 +1,5 @@
+import { FormItem } from "../Form/FormItem";
+
 export function reducer(state, action) {
     switch (action.type) {
       case 'update-item':
@@ -30,6 +32,10 @@ export function reducer(state, action) {
         const todoUp = state.todo.list;
         todoUp.push(action.item);
         return { ...state, todo: {list: todoUp, item: {}} }
+      case 'add-list':
+        const listUp = state.list.list;
+        listUp.push(action.item);
+        return { ...state, list: {list: listUp, item: {}} }
       default:
         return state;
     }

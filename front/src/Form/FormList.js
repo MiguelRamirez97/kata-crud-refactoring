@@ -1,6 +1,6 @@
 import React, { useContext, useReducer, useEffect, useRef, useState, createContext } from 'react';
-import { HOST_API } from '../App';
-import { Store } from '../App';
+import { HOST_API } from '../Host/Host';
+import { Store } from '../Host/Host';
 
 export const FormList = () => {
     const formRef = useRef(null); //valor que se puede cambiar

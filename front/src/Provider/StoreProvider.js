@@ -1,7 +1,7 @@
 import React, {useReducer} from 'react';
 import {reducer} from '../Reducer/Reducer'
-import {initialState} from '../App'
-import {Store} from '../App';
+import {initialState} from '../Host/Host';
+import {Store} from '../Host/Host';
 
 export const StoreProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
