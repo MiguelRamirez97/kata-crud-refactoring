@@ -1,8 +1,8 @@
 import React, { useContext, useReducer, useEffect, useRef, useState, createContext } from 'react';
 import HOST_API from '../App';
-import Store from '../App';
+import { Store } from '../App';
 
-const Form = () => {
+export const FormItem = () => {
     const formRef = useRef(null); //valor que se puede cambiar
     const { dispatch, state: { todo } } = useContext(Store);
     const item = todo.item;
@@ -71,4 +71,3 @@ const Form = () => {
       {!item.id && <button onClick={onAdd}>Crear</button>}
     </form>
   }
-  export default Form;
