@@ -1,3 +1,5 @@
+import React, { useContext, useReducer, useEffect, useRef, useState, createContext } from 'react';
+
 const Form = () => {
     const formRef = useRef(null); //valor que se puede cambiar
     const { dispatch, state: { todo } } = useContext(Store);
@@ -67,3 +69,4 @@ const Form = () => {
       {!item.id && <button onClick={onAdd}>Crear</button>}
     </form>
   }
+  export default Form;

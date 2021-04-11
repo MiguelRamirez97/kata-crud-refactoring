@@ -1,4 +1,6 @@
-const List = () => {
+import React, { useContext, useReducer, useEffect, useRef, useState, createContext } from 'react';
+
+export const List = (Store) => {
     const { dispatch, state: { todo } } = useContext(Store);
     const currentList = todo.list;
   
