@@ -2,7 +2,7 @@ import React, { useContext, useReducer, useEffect, useRef, useState, createConte
 import { HOST_API }  from '../Host/Host';
 import { Store } from '../Host/Host';
 
-export const List = () => {
+export const ListToDo = () => {
     const { dispatch, state: { todo } } = useContext(Store);
     const currentList = todo.list;
   
@@ -72,4 +72,3 @@ export const List = () => {
       </table>
     </div>
   }
-  export default List;

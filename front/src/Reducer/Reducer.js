@@ -20,6 +20,13 @@ export function reducer(state, action) {
         });
         todoUpDelete.list = listUpdate;
         return { ...state, todo: todoUpDelete }
+      case 'delete-list':
+        const listUpDelete = state.list;
+        const listUpdate1 = listUpDelete.list.filter((item) => {
+          return item.id !== action.id;
+        });
+        listUpDelete.list = listUpdate1;
+        return { ...state, list: listUpDelete }
       case 'update-list':
         const todoUpList = state.todo;
         todoUpList.list = action.list;

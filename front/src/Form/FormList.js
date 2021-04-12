@@ -7,14 +7,6 @@ export const FormList = () => {
     const {dispatch, state: {list}} = useContext(Store);
     const listItem = list.item;
     const [state, setState] = useState(listItem); //tengo un valor inicial y lo puedo cambiar
-
-    useEffect(() => { //se usa despues del renderizado
-        fetch(HOST_API + "/todos")
-          .then(response => response.json())
-          .then((list) => {
-            dispatch({ type: "update-list", list })
-          })
-      }, [dispatch]);
   
     const onAdd = (event) => {
       event.preventDefault();

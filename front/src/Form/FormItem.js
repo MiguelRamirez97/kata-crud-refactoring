@@ -31,6 +31,7 @@ export const FormItem = () => {
           setState({ name: "" });
           formRef.current.reset();
         });
+        console.log(todo);
     }
   
     const onEdit = (event) => {
@@ -58,8 +59,9 @@ export const FormItem = () => {
         });
     }
   
-    return <form ref={formRef}>
-      <input
+    return <div className="post-container"><form ref={formRef}>
+      <p>Tareas</p>
+      <input  
         type="text"
         name="name"
         placeholder="¿Qué piensas hacer hoy?"
@@ -70,4 +72,5 @@ export const FormItem = () => {
       {item.id && <button onClick={onEdit}>Actualizar</button>}
       {!item.id && <button onClick={onAdd}>Crear</button>}
     </form>
+    </div>
   }
