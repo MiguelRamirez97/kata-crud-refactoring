@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useEffect, useRef, useState, createContext } from 'react';
+import React, { useContext, useEffect} from 'react';
 import { FormItem } from '../Form/FormItem';
 import { HOST_API }  from '../Host/Host';
 import { Store } from '../Host/Host';
@@ -26,23 +26,21 @@ export const ListOfList = () => {
     };
   
 
-    return <div className="navbarh2">
-      <table >
-        <thead>
-          <tr>
-          </tr>
-        </thead>
+    return <div>
         <tbody>
+        <fieldset className ="navbarlista">
           {currentList.map((list) => {
-            return <tr key={list.id}>
-              <td>{list.id}</td>
+            return <div>
+            <tr key={list.id}>
+              <td className ="post-header">{list.id}</td>
               <td>{list.name}</td>
               <td><button onClick={() => onDelete(list.id)}>Eliminar</button></td>
             <FormItem/>
             <ListToDo/>
             </tr>
+            </div>
           })}
+        </fieldset>
         </tbody>
-      </table>
     </div>
   }

@@ -7,11 +7,13 @@ import {StoreProvider} from './Provider/StoreProvider';
 
 function App() {
   return ( 
+    <div>
     <StoreProvider>
       <h3>List</h3>
       <FormList />
       <ListOfList/>
     </StoreProvider>
+    </div>
   );
 }
 

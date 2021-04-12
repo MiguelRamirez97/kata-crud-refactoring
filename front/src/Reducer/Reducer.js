@@ -1,5 +1,3 @@
-import { FormItem } from "../Form/FormItem";
-
 export function reducer(state, action) {
     switch (action.type) {
       case 'update-item':
